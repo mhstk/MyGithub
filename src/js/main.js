@@ -56,7 +56,7 @@ function sendRepos_req(username, user_data){
             console.log(data.length);
             //check lasted {check_number} pushed commits
             let check_number = 20;
-            if (data.length >= 5){
+            if (data.length >= 1){
 
                 let sorted = data.sort((a, b) => (a.pushed_at < b.pushed_at ? 1 : -1)).slice(0,check_number);
                 let counts = {}
