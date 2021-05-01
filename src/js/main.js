@@ -50,7 +50,6 @@ function sendRepos_req(username, user_data){
             let status = result.response.status;
             if (status != 200){
                 console.log(data);
-                showErr(data.message);
                 return Promise.reject(data.message);
             }
             let favlang = "Not Found";
@@ -81,9 +80,11 @@ function sendRepos_req(username, user_data){
             setUserData(data);
 
         })
-        .catch(err => {});
+        .catch(err => {showErr(err)});
     })
 }
+
+
 
 function setUserData(data){
     showUserInfo();
@@ -108,12 +109,11 @@ function sendUser_req(username){
         let status = result.status;
         if (status != 200){
             console.log(data);
-            showErr(data.message);
             return Promise.reject(data.message);
         }
         sendRepos_req(username, data);
     })
-    .catch(err => {});
+    .catch(err => {showErr(err)});
 }
 
 function clear_all(){
