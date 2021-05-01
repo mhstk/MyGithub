@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="res/img/favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;600&display=swap" rel="stylesheet">    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="src/style/style.css">
+    <title>MyGithub</title>
+</head>
+
+<body>
+    
+    <div class="background">
+    <!-- <img id="rocket" src="res/img/rocket.gif"> -->
+    <img id="earth" src="res/img/earth.png">
+    <img class="background-octocat" src="res/img/octocat3.png">
+        <div class="container">
+            <div class="left-col">
+                <div id="message" class="show">
+                    <h5 id="not_searched">Enter Username in input box</h5>
+                    <div class="loader hide">
+                        <img src="res/img/loader.gif" alt="">
+                    </div>
+                    <div class="err-not-found hide"><p>User not found</p></div>
+                </div>
+                <div class="left-container hide">
+                    <div class="top-info-container">
+                        <div class="img_prof_container">
+                            <img class="loader-img show" src="res/img/loader2.gif">
+                            <img id="img-profile" class="hide">
+                        </div>
+                        <div class="info">
+
+
+                            <h5 id="name">
+                                
+                            </h5>
+                            <div class="icon-info-container">
+                                <i class="fas fa-link"></i>
+                                <a id="blogaddr" href="" target="_blank">
+                                    
+                                </a>
+                            </div>
+                            <div class="icon-info-container">
+                                <i class="fas fa-map-marker"></i>
+                                <p id="country_city">
+                                    
+                                </p>
+                            </div>
+                            <div class="icon-info-container">
+                                <i class="fas fa-code"></i>
+                                <p id="favlanguage">
+                                    
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                    
+                    <div class="bio-container">
+                        <h5>
+                            Biography
+                        </h5>
+                        <hr>
+                        <p id="bio-text">
+
+                        </p>
+                        
+                    </div>
+                </div>
+
+            </div>
+            <div class="login">
+                <form class="input-container">
+                        
+                        <img src="res/img/fun2.gif" alt="">
+                        <input id="input-username">
+                        <button type="submit" id="btn-submit">Submit</button>
+                    </form>
+                    <img class="icon" src="res/img/logo2.png">
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="src/js/main.js" charset="utf-8"></script>
+</body>
+
+</html>
