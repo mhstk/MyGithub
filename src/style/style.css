@@ -109,7 +109,7 @@ html,body{
 .left-col{
     width:64%;
     height:100%;
-    min-height: 50vh;
+    min-height: 43vh;
     max-height: 90vh;
     background-color:hsla(0, 0%, 16%, 0.897);
     border-radius: 10px;
@@ -323,7 +323,7 @@ html,body{
 
 .login{
     width: 34%;
-    min-height: 50vh;
+    min-height: 43vh;
     background-color: #ffa600b7;
     border-radius: 10px;
     display: flex;
