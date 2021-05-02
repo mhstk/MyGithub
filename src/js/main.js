@@ -13,8 +13,9 @@ const loader_div = document.querySelector(".loader");
 const error_div = document.querySelector(".err-not-found")
 
 
-
-
+/*
+setting submit button's click function
+*/
 document.getElementById("btn-submit").addEventListener("click", (e) => {
     e.preventDefault();
     let username = username_input.value;
@@ -29,11 +30,16 @@ document.getElementById("btn-submit").addEventListener("click", (e) => {
     
 })
 
+/*
+set value for favorite language
+*/
 function setFavLang(favlang){
     favlanguage_textbox.innerHTML = favlang;
 }
 
-
+/*
+send request to finds favorite language 
+*/
 function sendRepos_req(username, user_data){
     let url = `https://api.github.com/users/${username}/repos`
     fetch(url)
@@ -85,7 +91,9 @@ function sendRepos_req(username, user_data){
 }
 
 
-
+/*
+set all user's data
+*/
 function setUserData(data){
     showUserInfo();
     setFavLang(data.favlang);
@@ -96,7 +104,9 @@ function setUserData(data){
     setProfileImg(data.avatar_url);
 }
 
-
+/*
+send request to get user's data
+*/
 function sendUser_req(username){
     clear_all();
     let url = "https://api.github.com/users/" + username;
@@ -126,7 +136,9 @@ function clear_all(){
     remove_add_classlist(loader_img, ["hide"] , "show");
 }
 
-
+/*
+a helper function to add, remove class's from an element
+*/
 function remove_add_classlist(obj, rm_c, add_c){
     // console.log(obj);
     // console.log(rm_c);
@@ -135,6 +147,9 @@ function remove_add_classlist(obj, rm_c, add_c){
     obj.classList.add(add_c);
 }
 
+/*
+make visible user info div
+*/
 function showUserInfo(){
     [not_searched_div, loader_div, error_div, message_div].map(obj => 
         remove_add_classlist(obj, ["show", "flex"] , "hide"));
@@ -142,13 +157,18 @@ function showUserInfo(){
 }
 
 
-
+/*
+make visible loader(pacman) 
+*/
 function showLoader(){
     [left_container, not_searched_div, error_div].map(obj => remove_add_classlist(obj, ["show", "flex"], "hide"));
     [message_div, loader_div].map(obj => remove_add_classlist(obj, ["hide"], "flex"));
     [loader_div].map(obj => remove_add_classlist(obj, ["hide"], "show"));
 }
 
+/*
+make visible erroe div
+*/
 function showErr(err_message){
     [left_container, not_searched_div, loader_div].map(obj => 
         remove_add_classlist(obj, ["show", "flex"], "hide"));
@@ -159,7 +179,9 @@ function showErr(err_message){
 }
 
 
-
+/*
+set name of user
+*/
 function setName(name) {
     if (name === "" || name === null){
         name_textbox.innerHTML = "Not Found";
@@ -168,6 +190,9 @@ function setName(name) {
     name_textbox.innerHTML = name;
 }
 
+/*
+set blog address of user
+*/
 function setblogAddr(blogaddr) {
     if (blogaddr === "" || blogaddr === null){
         blogaddr_textbox.innerHTML = "Not Found";
@@ -179,6 +204,9 @@ function setblogAddr(blogaddr) {
     blogaddr : `https://${blogaddr}`;
 }
 
+/*
+set bio of user
+*/
 function setBio(bio) {
     if (bio === "" || bio === null){
         bio_textbox.innerHTML = "User dosn't have any bio information!";
@@ -187,6 +215,9 @@ function setBio(bio) {
     bio_textbox.innerHTML = bio;
 }
 
+/*
+set location of user
+*/
 function setCountry_city(country_city) {
     if (country_city === "" || country_city === null){
         country_city_textbox.innerHTML = "Not Found";
@@ -195,6 +226,9 @@ function setCountry_city(country_city) {
     country_city_textbox.innerHTML = country_city;
 }
 
+/*
+set profile image of user
+*/
 function setProfileImg(img) {
     if (img === "" || img === null){
         profile_img.src = "../../res/img/prof.png";
@@ -208,9 +242,12 @@ function setProfileImg(img) {
     
 }
 
+/*
+add function to hide profile image's loader and show image when is loaded
+*/
 profile_img.addEventListener("load", () => {
     remove_add_classlist(loader_img, ["show"] , "hide");
     remove_add_classlist(profile_img, ["hide"] , "show");
 })
 
-window.localStorage.clear();
+window.localStorage.clear(); //clear local storage on refresh

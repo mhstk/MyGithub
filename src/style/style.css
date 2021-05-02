@@ -1,11 +1,17 @@
 /* mainOrange: #ffa500 */
 
+/*
+all element be broder box and without default margin or padding
+*/
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/*
+setting star background, disabling scroll
+*/
 html,body{
     background-image: url(../../res/img/star2.jpg);
     height: 100%;
@@ -18,6 +24,9 @@ html,body{
     letter-spacing: 0.1em;
 }
 
+/*
+a black transparent layer on star image to make it darker, and centering content
+*/
 .background{
     background-color: rgba(0, 0, 0, 0.144);
     width: 100%;
@@ -29,6 +38,9 @@ html,body{
     align-items: center;
 }
 
+/*
+octocat
+*/
 .background-octocat{
     position: absolute;
     width: 30%;
@@ -41,6 +53,9 @@ html,body{
     animation-timing-function: linear;
 }
 
+/*
+octocat's animation
+*/
 @keyframes cat_an {
     0% { transform: translate(0px, 0px) rotate(0deg); }
     20% { transform: translate(100px, -100px) rotate(-10deg); }
@@ -51,6 +66,9 @@ html,body{
     
 }
 
+/*
+rocket
+*/
 #rocket{
     position: absolute;
     right: 0;
@@ -60,6 +78,9 @@ html,body{
 
 }
 
+/*
+rocket's animation
+*/
 @keyframes rocket_an {
     0% {height: 150px; right: -500px; bottom:-500px; transform: rotate(0deg)}
     25% {height: 200px; right:50%; bottom:120%; transform: rotate(0deg)}
@@ -74,6 +95,9 @@ html,body{
 
 }
 
+/*
+earth
+*/
 #earth {
     position: absolute;
     right: -250px;
@@ -82,6 +106,9 @@ html,body{
     animation: earth_an 60s linear infinite;
 }
 
+/*
+earth's animation
+*/
 @keyframes earth_an {
     0%{transform:  translate(0, 0) rotate(0deg);}
     50%{transform: translate(-180px, 180px) rotate(180deg);}
@@ -90,6 +117,9 @@ html,body{
     
 }
 
+/*
+main centered container
+*/
 .container{
     width: 63%;
     /* height: 80vh; */
@@ -105,10 +135,12 @@ html,body{
 
 }
 
-
+/*
+left part of container, with black transparent background
+*/
 .left-col{
     width:64%;
-    height:100%;
+    /* height:100%; */
     min-height: 43vh;
     max-height: 90vh;
     background-color:hsla(0, 0%, 16%, 0.897);
@@ -117,6 +149,9 @@ html,body{
     position: relative;
 }
 
+/*
+container for left infos for user's info
+*/
 .left-container{
     width: 100%;
     height: 100%;
@@ -126,6 +161,9 @@ html,body{
     font-size: 110%;
 }
 
+/*
+message div is used for showing page's first message and also error message
+*/
 #message{
     width: 100%;
     height: 100%;
@@ -142,17 +180,25 @@ html,body{
     /* display: none; */
 }
 
+/*
+page's first message
+*/
 #not_searched{
     font-size: 2em;
     font-weight: 400;
     /* display: none; */
 }
 
-
+/*
+pacman loader
+*/
 .loader img{
     height: 60px;
 }
 
+/*
+error message div
+*/
 .err-not-found{
     width: 70%;;
     /* height: 200px; */
@@ -167,6 +213,9 @@ html,body{
     align-items: center;
 }
 
+/*
+error message text
+*/
 .err-not-found p{
     margin: 0;
     padding: 0;
@@ -175,7 +224,9 @@ html,body{
     font-weight: 400; 
 }
 
-
+/*
+top info containing photo, name, blog address, location, favorite language
+*/
 .top-info-container{
     height: 50%;
     display: flex;
@@ -185,16 +236,24 @@ html,body{
     
 }
 
+/*
+infos in this shape {icon + the info}
+*/
 .icon-info-container{
     display: flex;
     align-items: center;
 }
 
+/*
+icons
+*/
 .icon-info-container i {
     margin-right: 9px;
 }
 
-
+/*
+photo container, fixed size, centering content
+*/
 .img_prof_container{
     height: 230px;
     width: 230px;
@@ -206,18 +265,27 @@ html,body{
     
 }
 
+/*
+make display flex
+*/
 .flex{
     display: flex;
 }
-
+/*
+make display block
+*/
 .show {
     display: block;
 }
-
+/*
+make display none, It use !important to overwrite element's default's display
+*/
 .hide {
     display: none !important;
 }
-
+/*
+the profile image tag
+*/
 #img-profile{
     border-radius: 50%;
     width: 100%;
@@ -227,13 +295,17 @@ html,body{
     
 }
 
-
-
+/*
+loader image
+*/
 .loader-img{
     height: 15%;
 
 }
 
+/*
+right part of left container, containing name, blog address, location, favorite language
+*/
 .info{
     display: flex;
     flex-direction: column;
@@ -244,12 +316,18 @@ html,body{
     
 }
 
+/*
+name
+*/
 #name{
     margin: 5px 0;
     font-size: 2em;
     
 }
 
+/*
+blog address
+*/
 #blogaddr{
     margin: 5px 0;
     text-decoration: none;
@@ -257,17 +335,25 @@ html,body{
     /* white-space: initial; */
 }   
 
+/*
+location
+*/
 #country_city{
     margin: 5px 0;
 
 }
 
+/*
+favorite language
+*/
 #favlanguage{
     margin: 5px 0;
 
 }
 
-
+/*
+contaner for bio
+*/
 .bio-container{
     height: 40%;
     /* background-color:coral; */
@@ -278,11 +364,17 @@ html,body{
     flex-direction: column;
 }
 
+/*
+bio header
+*/
 .bio-container h5{
     margin-bottom: 5px;
     font-size: 1.05em;
 }
 
+/*
+bio divider
+*/
 .bio-container hr{
     width: 45%;
     border-top: 3px solid #ffa500;
@@ -290,6 +382,9 @@ html,body{
     margin-bottom: 20px;
 }
 
+/*
+the bio text
+*/
 #bio-text{
     max-height: 30vh;
     line-height: 1.4em;
@@ -300,20 +395,27 @@ html,body{
     scrollbar-color: gray #ffa500 ;   /* scroll thumb and track */
 }
 
+/*
+change look of bio's scrollbar
+*/
 #bio-text::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
   border-radius: 5px;
   background-color: gray;
 }
-
+/*
+change look of bio's scrollbar
+*/
 #bio-text::-webkit-scrollbar
 {
   width: 5px;
   background-color: gray;
   border-radius: 5px;
 }
-
+/*
+change look of bio's scrollbar
+*/
 #bio-text::-webkit-scrollbar-thumb
 {
   border-radius: 5px;
@@ -321,6 +423,9 @@ html,body{
   background-color: #ffa500;
 }
 
+/*
+right part of the main container, used for entering username and clicking the submit btn
+*/
 .login{
     width: 34%;
     min-height: 43vh;
@@ -334,6 +439,9 @@ html,body{
     padding: 50px;
 }
 
+/*
+logo bottom of login
+*/
 .icon{
     height: 17px;
     border-radius: 8px;
@@ -342,6 +450,9 @@ html,body{
     
 }
 
+/*
+input, image, button container, centering content
+*/
 .input-container{
     display: flex;
     flex-direction: column;
@@ -351,11 +462,17 @@ html,body{
 
 }
 
+/*
+gif octocat image
+*/
 .input-container img{
     height: 100px;
     margin-bottom: 10px;
 }
 
+/*
+the imput
+*/
 #input-username{
     width: 100%;
     height: 40px;
@@ -367,6 +484,9 @@ html,body{
 
 }
 
+/*
+the submit button
+*/
 #btn-submit{
     height: 35px;
     width: 80%;
@@ -381,10 +501,16 @@ html,body{
     text-align: center;
     font-weight: 200;
 }
+/*
+the submit button hover
+*/
 #btn-submit:hover {
 	background-color:rgb(128,128,128);
 }
 
+/*
+the submit button active
+*/
 #btn-submit:active {
 	position:relative;
 	top:2px;
