@@ -175,7 +175,8 @@ function setblogAddr(blogaddr) {
         return;
     }
     blogaddr_textbox.innerHTML = blogaddr;
-    blogaddr_textbox.href = blogaddr;
+    blogaddr_textbox.href = (blogaddr.startsWith("https://") || blogaddr.startsWith("http://")) ? 
+    blogaddr : `https://${blogaddr}`;
 }
 
 function setBio(bio) {
